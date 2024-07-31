@@ -1,3 +1,4 @@
+<!-- src/app/article-list/article-list.component.html -->
 <div class="container mt-4">
     <h2 class="mb-4 text-center">Articles List</h2>
     <div class="row">
@@ -8,7 +9,7 @@
                     <p class="card-text">{{ article.body }}</p>
                     <div class="mt-auto d-flex justify-content-between">
                         <button class="btn btn-info btn-sm" (click)="viewArticle(article.id)">View</button>
-                        <button class="btn btn-warning btn-sm" (click)="editArticle(article.id)">Edit</button>
+                        <button class="btn btn-warning btn-sm" routerLink="/article/edit/{{ article.id }}">Edit</button>
                         <button class="btn btn-danger btn-sm" (click)="deleteArticle(article.id)">Delete</button>
                     </div>
                 </div>

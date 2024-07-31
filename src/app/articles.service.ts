@@ -1,7 +1,8 @@
+// src/app/articles.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError, of } from 'rxjs';
-import { Article } from './models/article.model';
+import { Article, Comment } from './models/article.model';
 import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
@@ -33,6 +34,12 @@ export class ArticlesService {
         catchError(this.handleError)
       );
     }
+  }
+
+  getComments(articleId: number): Observable<Comment[]> {
+    return this.http.get<Comment[]>(`${this.apiUrl}/${articleId}/comments`).pipe(
+      catchError(this.handleError)
+    );
   }
 
   createArticle(article: Article): Observable<Article> {

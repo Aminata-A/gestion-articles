@@ -1,15 +1,32 @@
+<!-- src/app/article-detail/article-detail.component.html -->
 <div class="container mt-4">
-    <div class="card" *ngIf="article">
-      <div class="card-body">
-        <h1 class="card-title">{{ article.title }}</h1>
-        <img *ngIf="article.imageUrl" [src]="article.imageUrl" alt="{{ article.title }}" class="card-img-top mb-3"/>
-        <p class="card-text">{{ article.body }}</p>
-        <!-- <button class="btn btn-secondary" (click)="goBack()">Back</button> -->
-      </div>
-    </div>
-    
-    <div *ngIf="!article" class="text-center">
-      <p>Loading...</p>
+  <div class="card article-detail-card">
+    <div class="card-body">
+      <h1 class="card-title">{{ article.title }}</h1>
+      <p class="card-text">{{ article.body }}</p>
     </div>
   </div>
-  
+
+  <div *ngIf="!article" class="text-center mt-4">
+    <p>Loading...</p>
+  </div>
+
+  <div *ngIf="comments.length > 0" class="mt-4 comments-section">
+    <h3>Commentaires</h3>
+    <div *ngFor="let comment of comments" class="card comment-card mt-3">
+      <div class="card-body">
+        <h5 class="card-title">{{ comment.name }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ comment.email }}</h6>
+        <p class="card-text">{{ comment.body }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!comments.length && !errorMessage" class="text-center mt-4">
+    <p>Loading comments...</p>
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+    {{ errorMessage }}
+  </div>
+</div>

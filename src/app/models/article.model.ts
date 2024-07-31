@@ -1,7 +1,15 @@
+// src/app/models/article.model.ts
 export interface Article {
-    userId: number;
-    id: number;
-    title: string;
-    body: string;
-  }
-  
+  id: number;
+  title: string;
+  body: string;
+  imageUrl?: string;
+}
+
+export interface Comment {
+  postId: number;
+  id: number;
+  name: string;
+  email: string;
+  body: string;
+}
