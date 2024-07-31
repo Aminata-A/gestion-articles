@@ -39,15 +39,11 @@ export class ArticlesListComponent implements OnInit {
 
   deleteArticle(id: number): void {
     this.articlesService.deleteArticle(id).subscribe(() => {
-      this.articles = this.articles.filter(article => article.id !== id);
+      this.loadArticles();
     });
-  }
-
-  refreshArticles(): void {
-    this.loadArticles();
   }
   
   goBack(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/articles']);
   }
 }

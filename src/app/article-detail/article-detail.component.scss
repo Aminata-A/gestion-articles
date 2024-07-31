@@ -1,0 +1,75 @@
+/* src/app/article-detail/article-detail.component.scss */
+.container {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .article-detail-card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+  
+    .card-body {
+      padding: 1.5rem;
+    }
+  
+    .card-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #343a40;
+      margin-bottom: 1rem;
+    }
+  
+    .card-text {
+      font-size: 1.1rem;
+      color: #495057;
+    }
+  }
+  
+  .comments-section {
+    margin-top: 2rem;
+  
+    h3 {
+      font-size: 1.8rem;
+      color: #343a40;
+      margin-bottom: 1rem;
+    }
+  
+    .comment-card {
+      border: none;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      background-color: #ffffff;
+  
+      .card-body {
+        padding: 1rem;
+      }
+  
+      .card-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #495057;
+        margin-bottom: 0.5rem;
+      }
+  
+      .card-subtitle {
+        font-size: 0.9rem;
+        color: #868e96;
+        margin-bottom: 0.5rem;
+      }
+  
+      .card-text {
+        font-size: 1rem;
+        color: #6c757d;
+      }
+    }
+  }
+  
+  .alert {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
