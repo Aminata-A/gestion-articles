@@ -15,7 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./article-form.component.scss']
 })
 export class ArticleFormComponent implements OnInit {
-  @Output() articleUpdated = new EventEmitter<void>();
+  @Output() articleSubmitted = new EventEmitter<void>();
   articleForm: FormGroup;
   isEditMode = false;
   articleId?: number;
@@ -61,7 +61,7 @@ export class ArticleFormComponent implements OnInit {
     if (this.isEditMode) {
       this.articlesService.updateArticle(this.articleId!, article).subscribe(
         () => {
-          this.articleUpdated.emit();
+          this.articleSubmitted.emit();
           this.router.navigate(['/articles']);
         },
         error => {
@@ -71,7 +71,7 @@ export class ArticleFormComponent implements OnInit {
     } else {
       this.articlesService.createArticle(article).subscribe(
         () => {
-          this.articleUpdated.emit();
+          this.articleSubmitted.emit();
           this.router.navigate(['/articles']);
         },
         error => {
